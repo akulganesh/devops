@@ -1,0 +1,71 @@
+First for lunching the instances Ubuntu Server 16.04 LTS i choosed online cloud platform aws
+I created Basic AWS free tire account
+then for lunching the instance below step lead create new instance.
+step 1. in the AWS console login with credentials .
+step 2. after successful login in top of aws menu screen there is a service option click on that . it will take you to aws service page
+In that select Ec2  for lunching the virtul operating system in AWS.
+In the next page To start using Amazon EC2 you will want to launch a virtual server, known as an Amazon EC2 instance.
+Select the lunch instance. (it create new instance)
+these are step by step process.
+
+1. Choose AMI 2. Choose Instance Type 3.Configure Instance 4. Add Storage5. Add Tags6. Configure Security Group 7. Review
+
+1. Choose
+Here i opt for free tire option and select one of the Ubuntu Server 16.04 LTS.
+Ubuntu Server 16.04 LTS (HVM), SSD Volume Type - ami-0653e888ec96eab9b (64-bit x86) / ami-0b5f1bbaae8cd790f (64-bit Arm)
+I choosed the above version.
+
+2. Choose Instance
+General purpose
+t2.micro
+Free tier eligible
+1 cpu
+1 ram
+EBS only
+-
+Low to Moderate
+
+select this t2.micro which is free tire  which comes with 1 ram and 1 core processor.
+and corner of right side down pane click  Next: Configure Instance Details.
+
+3.Configure Instance
+Number of instances "2" // here i give two instance for launch.
+and choose another option in my case launching small ec2 not required.
+
+4. Add Storage
+
+Step 4: Add Storage
+here i allocated the 20 gb ssd for each EC2 mechine.
+
+it will take you to next wepage . in that edit the security group ( the security group is used allow the various port for login and also restrict ports to access or block internet trafic.)
+ 
+ step 5 add key in this not required just leavit.
+ 
+Step 6: Configure Security Group
+Assign a security group:
+Create a new security group ( here im select this option because this new aws account i have'nt created before security group.)
+Security group name: Devops_fresher // i gave the name for security group and below give the description for the group.
+i choosen then the below option for access ec2 instance in my linux mechine and windows mechine.
+ADD RULES---
+Type --------ssh 
+Protocol-----TCP
+Port Range----22
+Source-------ANYWHERE // I OPT THIS OPTION INSTED REMAING TWO OPTION CUSTOM, MYIP.
+Description-----DEVOPS_FRESHER_EC2_MECHINES
+CLICK NEXT BUTTON --- REVIEW AND LAUNCH
+7. Review
+Step 7: Review Instance Launch
+Cancel Previous  Launch
+Please review your instance launch details. You can go back to edit changes for each section. Click Launch to assign a key pair to your instance and complete the launch process.
+ it will show u all details has done that 
+ 
+click lauch.
+ in very next step it will ask you that public key.
+ in my case i dont created before so now iam creating new keypair
+ choose create new keypair option
+ give the new keypair name and description --- and download the keypair file which .pem format file  
+ next click the launch option and it will take you to instance page in that you can see that what are the instance are up and running.
+ 
+ this all about creating the AWS Instance. next how login the 
+ 
+thank 
