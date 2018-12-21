@@ -1,0 +1,15 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+  - name: prepare Install dockercomposer
+    become: true
+    become_user: root
+    get_url:
+        url:  https://github.com/docker/compose/releases/download/1.23.2/docker-compose-Linux-x86_64
+        dest: /usr/local/bin/
+  - name: making the executable file
+    become: true
+    become_user: root
+    file: path=/usr/local/bin/docker-compose-Linux-x86_64 mode=0775 
+...
