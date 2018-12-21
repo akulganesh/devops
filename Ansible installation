@@ -10,26 +10,17 @@ sudo apt-get update
 type below command
 sudo apt-get install ansible -y
 edit the /etc/ansible/hosts
-[ansible_server]                    //server ip
-alias ansible_ssh_host=172.31.40.212
-[clients]
-host1 ansible_ssh_host=172.31.47.131  // host details
-
-error
-}
-172.31.47.131 | FAILED! => {
-    "changed": false, 
-    "module_stderr": "Shared connection to 172.31.47.131 closed.\r\n", 
-    "module_stdout": "/bin/sh: 1: /usr/bin/python: not found\r\n", 
-    "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", 
-    "rc": 127
-    check pyhton2
-    it lead to pyhton console
-    Ubuntu 16.04 requires Python 2 installed for this playbook to run.
-
+[MSR]
+169.254.38.60
+169.254.38.61
 sudo apt-get install python-simplejson
-ansible all -m ping
-172.31.47.131 | SUCCESS => {
+ansible MSR -m ping
+169.254.38.60 | SUCCESS => {
     "changed": false, 
     "ping": "pong"
 }
+169.254.38.61 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+SO IT IS WORKING 
