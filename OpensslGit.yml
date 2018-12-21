@@ -1,0 +1,7 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+  - name: Prepare Install openssl and Git
+    action: shell apt-get install -y openssl
+    action: shell apt-get install -y git  
