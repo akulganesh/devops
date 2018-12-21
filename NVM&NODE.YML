@@ -1,0 +1,19 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+  - name: Prepare Install folder
+    become: true
+    become_user: root
+    action: shell sudo mkdir -p /root/yaml/
+  - name: Download git_nvm
+    become: true
+    become_user: root
+    action: shell  wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+    action: shell . ~/.bashrc
+  tasks:
+  - name: Node installation
+    action: shell source /root/.nvm/nvm.sh && nvm install 8.12.0
+    args:
+      executable: /bin/bash
+...
