@@ -1,0 +1,16 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+  - name: Prepare Install docker
+    become: true
+    become_user: root
+    action: shell apt-get update
+    action: shell wget https://download.docker.com/linux/ubuntu/gpg |  apt-key add -
+    action: shell apt-get update
+    action: shell add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    action: shell apt-get update
+    action: shell apt-cache policy docker-ce
+    action: shell apt-get install -y docker
+    action: shell apt-get install -y docker.io
+...
