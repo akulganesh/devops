@@ -1,0 +1,9 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+  - name: Apt-based_docker-compose installation
+    become: true
+    become_user: root
+    action: shell apt-get install -y docker-compose
+...
